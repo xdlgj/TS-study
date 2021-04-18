@@ -1,0 +1,35 @@
+{
+  "name": "TS-study",
+  "version": "1.0.0",
+  "description": "安装typescript\r ```\r npm install -g typescript\r 或\r yarn global add typescript\r ```\r ## 开发工具VScode配置\r 1、创建tsconfig.json文件 \r ```\r tsc --init\r ```\r 2、修改配置文件\r ```\r \"outDir\": \"./js\",                        /* Redirect output structure to the directory. */\r ```\r 3、terminal -> Run Task... -> tsc: watch - tsconfig.json, 之后ts代码将自动转换为js代码\r # webpack\r 1、npm init -y :生成package.json文件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack serve --open chrome.exe"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xdlgj/TS-study.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xdlgj/TS-study/issues"
+  },
+  "homepage": "https://github.com/xdlgj/TS-study#readme",
+  "devDependencies": {
+    "@babel/core": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "core-js": "^3.10.1",
+    "html-webpack-plugin": "^5.3.1",
+    "ts-loader": "^8.1.0",
+    "typescript": "^4.2.4",
+    "webpack": "^5.33.2",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
