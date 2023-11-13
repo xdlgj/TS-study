@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>网页模板</title>
+    <title>贪吃蛇</title>
 </head>
 <body>
-    <div id="box1">我是一个div</div>
+    <!--创建游戏的主界面-->
+    <div id="main">
+        <div class="stage">
+            <!--设置蛇-->
+            <div id="snake">
+                <div></div>
+            </div>
+            <div id="food"></div>
+        </div>
+        <div class="score-panel">
+            <div>
+                SCORE: <span id="score">0</span>
+            </div>
+            <div>
+                LEVEL: <span id="level">1</span>
+            </div>
+            
+        </div>
+    </div>
 </body>
 </html>

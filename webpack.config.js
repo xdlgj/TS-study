@@ -26,7 +26,8 @@ module.exports = {
     // 指定webpack打包时要使用的模块
     module: {
         // 指定要加载的规则
-        rules: [{
+        rules: [
+            {
             // test指定的是规则生效的文件
             test: /\.ts$/,
             // 要使用的loader,执行顺序从后往前执行
@@ -63,7 +64,32 @@ module.exports = {
             // 要排除的文件
             exclude: /node-modules/
 
-        }]
+            }, 
+            { // 设置less相关配置
+                test: /\.less$/,
+                use: [ // 顺序从后向前
+                    "style-loader",
+                    "css-loader",
+                    // 引入postcss, 将css降级处理以便适配低版本的浏览器，顺序在less-loader之后，css-loader之前
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            postcssOptions: {
+                                plugins: [
+                                    [
+                                        "postcss-preset-env",
+                                        {
+                                            browsers: "last 2 versions", // 适配每种浏览器的最新的两个版本
+                                        }
+                                    ]
+                                ]
+                            }
+                        }
+                    },
+                    "less-loader",
+                ]
+            }
+        ]
     },
     // The 'mode' option has not been set, webpack will fallback to 'production' for this value.
     mode: "production",
